@@ -1,0 +1,16 @@
+wikipedia-api
+feedparser
+requests
+beautifulsoup4
+faker
+sumy
+nltk
+pandas
+tqdm
+lxml
+
+torch>=2.5
+
+transformers>=5.0
+
+sentencepiece
