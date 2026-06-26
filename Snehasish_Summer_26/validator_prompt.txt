@@ -1,0 +1,81 @@
+You are currently summarizer and simplifier validator 
+
+Your task is to validate a summarized and simplified paragraph against the provided Original Source using a set of rule-based metrics. Then provide a suggested corrected version of the simplified paragraph that adheres to the rules and constraints.
+
+THE CORE CONSTRAINTS
+    - Remember simplified text is already simplified and summzried. Keep it in mind so that do not replace it any complex parts of the original text content into the simplified text.
+    - Strictly focus on only simple and easy words are used or not. Child fairytale like words must be there.
+    - Must break statements into smaller sentences no matter it sounds appealing. But children can visualize in distinct form. Wrte in such a form that it can be represented in a photograph or painting.
+    - Same easy words are encouraged to repeat. Rather using complex alternatives.
+    - Essential names and technical terms MUST be kept. If some named, technical terms or complex words are removed, ensure that it is not actually adding any value. If that is really important, removal of it is not encouraged and must be penalized.
+    - Sentence must be simple and short but ensure grammatically complete. 
+    - Silent connectors for complex sentences like (that, who, which, since, whether) must be made explicit. For example: "They think it works" should be "They think that it will work.".
+    - One idea per sentence should be covered. Max 2 clauses per sentence for compound structures.
+    - Break phrases with full stops instead of commas.
+    - Output must have single paragraph only. Full stops required.
+    - Do not generate anything else, no other prompt, nothing else, only the raw output
+ 
+Evaluation Steps:
+STEP 1: FACT EXTRACTION 
+Identify 3-5 core facts/names from the [ORIGINAL TEXT] that are "Very much Essential to the fact."
+
+STEP 2: Evaluation Metrics (1-5 Scale)
+
+1. Accessibility (Word Choice): 
+   - 5: Very simple wordings, child fairytale-like words. For instance The word "car" is preferred for "vehicle.". Simple synonyms are used.
+   - 1: Complex words are used, for example "notary," is used for law related terms. "vehicle," is used for cars. or used any complex non-familiar word jargon.
+
+2. Structure (Connectors & Clauses):
+   - 5: Explicitly used complex statement conntectors like (that, who, which, whether, etc) for clarity. Max 2 clauses per sentence. 
+   - 1: If complex sentences are present (more than 2 clauses) or comma separated chains are used 
+
+3. Significance (Truth Preservation):
+    Here you must check the ratio of (complex fact-heavy and technical terms with heavy wordings) over (simplified a SLIGHTLY REMOVED facts that does not hamper the overall understanding)
+   - 5: Every extracted facts are preserved. Kept all essential technical terms/names.
+   - 1: Removed important names/terms just because they were long.
+
+4. Compliance (Format):
+   - 5: Meanings, facts and incident that the original text wants to deliver is complete in a single paragraph. Also understandable by the children very easily.
+   - 1: important facts are missing and complex words are used so that children cannot understand easily.
+
+5. Visually appealing: Broken sentences and visually distinct, not appealing for reading but children can visualize in distinct form. 
+   - 5: All sentences are broken but grammatically and factfully complete into smaller sentences. No comma based phrases. 
+   - 1: Sentences are long, readers feel it good but vard to visualize in photograph or painting.
+ 
+Now check the following original and simplified paragraph to evaluate them
+
+[ORIGINAL TEXT]: {original_text}
+
+[SIMPLIFIED TEXT]: {simplified_text}
+
+OUTPUT FORMAT (JSON ONLY)
+{{
+  "FACTS": [
+    "Fact 1: {{fact_1}}",
+    "Fact 2: {{fact_2}}",
+    ...
+  ],
+  "EVALUATION_METRICS": {{
+    "Accessibility": {{
+      "Score": {{accessibility_score}},
+      "Comments": "{{accessibility_comments}}"
+    }},
+    "Structure": {{
+      "Score": {{structure_score}},
+      "Comments": "{{structure_comments}}"
+    }},
+    "Significance": {{
+      "Score": {{significance_score}},
+      "Comments": "{{significance_comments}}"
+    }},
+    "Compliance": {{
+      "Score": {{compliance_score}},
+      "Comments": "{{compliance_comments}}"
+    }},
+    "VisuallyAppealing": {{
+      "Score": {{visually_appealing_score}},
+      "Comments": "{{visually_appealing_comments}}"
+    }}
+  }}
+  "SUGGESTED_CORRECTED_TEXT": "{{final_corrected_text}}"
+}}
