@@ -6,11 +6,11 @@ Adjust these values to control the output.
 # ─── Dataset Generation Settings ───────────────────────────────────────────────
 MIN_PARAGRAPHS = 2000         # Minimum number of paragraphs to generate
 MAX_PARAGRAPHS = 5000          # Maximum number of paragraphs to generate
-TARGET_PARAGRAPHS = 100       # Default target (used if not randomized)
+TARGET_PARAGRAPHS = 5000       # Default target (used if not randomized)
 RANDOMIZE_COUNT = False         # If True, picks a random count between MIN and MAX
 
-MIN_WORDS_PER_PARA = 250      # Minimum words per paragraph
-MAX_WORDS_PER_PARA = 300      # Maximum words per paragraph
+MIN_WORDS_PER_PARA = 450      # Minimum words per paragraph
+MAX_WORDS_PER_PARA = 650      # Maximum words per paragraph
 
 # ─── Scraping Settings ─────────────────────────────────────────────────────────
 WIKIPEDIA_USER_AGENT = "DatasetGenerator/2.0 (research-project)"
@@ -23,8 +23,8 @@ SUMMARIZER_BACKEND = "transformers"
 SUMMARIZER_MODEL = "t5-small"
 
 # Target summary length (in words, approximate)
-SUMMARY_MIN_WORDS = 50
-SUMMARY_MAX_WORDS = 70
+SUMMARY_MIN_WORDS = 120
+SUMMARY_MAX_WORDS = 150
 
 # ─── Output Settings ──────────────────────────────────────────────────────────
 OUTPUT_DIR = "output"
