@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "source": "Web Scrape",
+    "text": "A diffusionless transformation, commonly known as displacive transformation, denotes solid-state alterations in crystal structures that do not hinge on the diffusion of atoms across extensive distances. Rather, these transformations manifest as a result of synchronized shifts in atomic positions, wherein atoms undergo displacements of distances smaller than the spacing between adjacent atoms, all while preserving their relative arrangement. An example of such a phenomenon is the martensitic transformation, a notable occurrence observed in the context of steel materials. The term \"martensite\" was originally coined to describe the rigid and finely dispersed constituent that emerges in steels subjected to rapid cooling. Subsequent investigations revealed that materials beyond ferrous alloys, such as non-ferrous alloys and ceramics, can also undergo diffusionless transformations. Consequently, the term \"martensite\" has evolved to encompass the resultant product arising from such transformations in a more inclusive manner. In the context of diffusionless transformations, a cooperative and homogeneous.",
+    "word_count": 149
+  },
+  {
+    "id": 2,
+    "source": "Web Scrape",
+    "text": "The systematic movement of large numbers of atoms led some to refer to them as military transformations, in contrast to civilian diffusion-based phase changes, initially by Charles Frank and John Wyrill Christian. The most commonly encountered transformation of this type is the martensitic transformation, which is probably the most studied but is only one subset of non-diffusional transformations. The martensitic transformation in steel represents the most economically significant example of this category of phase transformations. However, an increasing number of alternatives, such as shape memory alloys, are becoming more important as well. The phenomenon in which atoms or groups of atoms coordinate to displace their neighboring counterparts resulting in structural modification is known as a displacive transformation. The scope of displacive transformations is extensive, encompassing a diverse array of structural changes. As a result, additional classifications have been devised to provide a more nuanced understanding of these transformations.",
+    "word_count": 148
+  },
+  {
+    "id": 3,
+    "source": "Web Scrape",
+    "text": "The first distinction can be drawn between transformations dominated by lattice-distortive strains and those where shuffles are of greater importance. Homogeneous lattice-distortive strains, also known as Bain strains, transform one Bravais lattice into a different one. This can be represented by a strain matrix S which transforms one vector, y, into a new vector, x: This is homogeneous, as straight lines are transformed into new straight lines. Examples of such transformations include a cubic lattice increasing in size on all three axes (dilation) or shearing into a monoclinic structure. Shuffles, aptly named, refer to the minute displacement of atoms within the unit cell. Notably, pure shuffles typically do not induce a modification in the shape of the unit cell; instead, they predominantly impact its symmetry and overall structural configuration.",
+    "word_count": 129
+  },
+  {
+    "id": 4,
+    "source": "Web Scrape",
+    "text": "Phase transformations typically give rise to the formation of an interface delineating the transformed and parent materials. The energy requisite for establishing this new interface is contingent upon its characteristics, specifically how well the two structures interlock. An additional energy consideration arises when the transformation involves a change in shape. In such instances, if the new phase is constrained by the surrounding material, elastic or plastic deformation may occur, introducing a strain energy term. The interplay between these interfacial and strain energy terms significantly influences the kinetics of the transformation and the morphology of the resulting phase. Notably, in shuffle transformations characterized by minimal distortions, interfacial energies tend to predominate, distinguishing them from lattice-distortive transformations where the impact of strain energy is more pronounced.",
+    "word_count": 124
+  },
+  {
+    "id": 5,
+    "source": "Web Scrape",
+    "text": "A subclassification of lattice-distortive displacements can be made by considering the dilutional and shear components of the distortion. In transformations dominated by the shear component, it is possible to find a line in the new phase that is undistorted from the parent phase while all lines are distorted when the dilation is predominant. Shear-dominated transformations can be further classified according to the magnitude of the strain energies involved compared to the innate vibrations of the atoms in the lattice and hence whether the strain energies have a notable influence on the kinetics of the transformation and the morphology of the resulting phase. If the strain energy is a significant factor, then the transformations are dubbed martensitic, if not the transformation is referred to as quasi-martensitic.",
+    "word_count": 125
+  },
+  {
+    "id": 6,
+    "source": "Web Scrape",
+    "text": "The distinction between austenitic and martensitic steels is subtle in nature. Austenite exhibits a face-centered cubic (FCC) unit cell, whereas the transformation to martensite entails a distortion of this cube into a body-centered tetragonal shape (BCT). This transformation occurs due to a displacive process, where interstitial carbon atoms lack the time to diffuse out. Consequently, the unit cell undergoes a slight elongation in one dimension and contraction in the other two. Despite differences in the symmetry of the crystal structures, the chemical bonding between them remains similar. The iron-carbon martensitic transformation generates an increase in hardness. The martensitic phase of the steel is supersaturated in carbon and thus undergoes solid solution strengthening. Similar to work-hardened steels, defects prevent atoms from sliding past one another in an organized fashion, causing the material to become harder.",
+    "word_count": 134
+  },
+  {
+    "id": 7,
+    "source": "Web Scrape",
+    "text": "In addition to displacive transformation and diffusive transformation, a new type of phase transformation that involves a displacive sublattice transition and atomic diffusion was discovered using a high-pressure X-ray diffraction system. The new transformation mechanism has been christened pseudo martensitic transformation. Donn Fulton Eisele (June 23, 1930 – December 1, 1987) was a United States Air Force officer, test pilot, and later a NASA astronaut. He served as command module pilot for the Apollo 7 mission in 1968. After retiring from both NASA and the Air Force in 1972, he became the Peace Corps country director for Thailand, before moving into private business. Eisele was born June 23, 1930, in Columbus, Ohio, to Herman Eugene Eisele and Lee Ila June Eisele (née Davisson). He graduated from West High School in 1948. He was an active Boy Scout and earned the rank of Еagle Scout. He received a Bachelor of.",
+    "word_count": 149
+  },
+  {
+    "id": 8,
+    "source": "Web Scrape",
+    "text": "Following his commission, Eisele was sent to flight training. He was trained at Goodfellow Air Force Base, Texas, Williams Air Force Base, Arizona, and Tyndall Air Force Base, Florida. After receiving his pilot wings in 1954, Eisele served four years as an interceptor pilot in South Dakota and in Libya until 1958. He attended and graduated from the U.S. Air Force Experimental Flight Test Pilot School (Class 62A) at Edwards Air Force Base, California, in 1962; his classmates included Charles Bassett and Theodore Freeman. Eisele was a project engineer and experimental test pilot at the Air Force Special Weapons Center at Kirtland Air Force Base, New Mexico. He flew experimental test flights in support of special weapons development programs. He logged more than 4,200 hours flying time, 3,600 of which were in jet aircraft.",
+    "word_count": 134
+  },
+  {
+    "id": 9,
+    "source": "Web Scrape",
+    "text": "Eisele was part of NASA's third group of astronauts, selected in October 1963. In early 1966, Eisele was quietly selected as pilot for the Apollo 1 crew, along with Command Pilot Virgil I. \"Gus\" Grissom and Senior Pilot Ed White. But after dislocating his shoulder twice during training in January 1966, Eisele was replaced by Roger B. Chaffee. After corrective surgery on January 27, Eisele was named to the crew for the second crewed Apollo flight, with Command Pilot Walter \"Wally\" Schirra and Pilot Walter Cunningham. At this time, Eisele was promoted to the Senior Pilot position. In December 1966, Apollo 2 was canceled on the grounds that it would be an unnecessary repeat of Apollo 1, and Schirra, Eisele, and Cunningham became the backups to Grissom's crew. But after Grissom, White, and Chaffee were killed in the Apollo 1 spacecraft fire of January 27, 1967, Schirra, Eisele, and.",
+    "word_count": 149
+  },
+  {
+    "id": 10,
+    "source": "Web Scrape",
+    "text": "As the launch date approached, Eisele's participation was at risk; he was having an extramarital affair with a woman who would later become his second wife. Astronaut Office Chief Deke Slayton had warned the crew that they were all \"expendable\", and that any extramarital affairs must not become public. Eisele remained on the crew, and on October 11, 1968, Apollo 7 was launched on an 11-day mission—the first crewed flight test of the third generation United States spacecraft. By this time, the Senior Pilot title was changed to Command Module Pilot. Together with spacecraft commander Schirra and Lunar Module Pilot Cunningham, Eisele performed simulated transposition and docking maneuvers with the upper stage of their Saturn IB launch vehicle, and acted as navigator, taking star sightings and aligning the spacecraft's guidance and navigation platform. The crew completed eight successful test firing maneuvers of the service module's propulsion engine. They also.",
+    "word_count": 149
+  },
+  {
+    "id": 11,
+    "source": "Web Scrape",
+    "text": "Apollo 7 was placed in a geocentric orbit with an apogee of 153.5 nautical miles (284.3 km; 176.6 mi) and perigee of 122.6 nautical miles (227.1 km; 141.1 mi). The 260-hour, 4.5 million mile (7.25 million km) shakedown flight was successfully concluded on October 22, 1968, with splashdown occurring in the Atlantic, 8 miles (15 km) from the carrier USS Essex and only 0.3 miles (0.48 km; 480 m) from the predicted target. Eisele logged 260 hours in space. Eisele served as backup Command Module Pilot for the 1969 Apollo 10 flight. Eisele resigned from the Astronaut Office in 1970 and became technical assistant for crewed spaceflight at the NASA Langley Research Center, a position he occupied until retiring from both NASA and the Air Force in 1972.",
+    "word_count": 128
+  },
+  {
+    "id": 12,
+    "source": "Web Scrape",
+    "text": "In July 1972, Eisele became Country Director of the U.S. Peace Corps in Thailand. Returning from Thailand two years later, he became Sales Manager for Marion Power Shovel, a division of Dresser Industries. Eisele then handled private and corporate accounts for the investment firm of Oppenheimer & Company. In 1980, Eisele moved to Wilton Manors, Florida. In 1981, Eisele was appointed to a vacant seat on the Wilton Manors City Commission, and served in that political office for roughly one year. After Eisele's death, the City of Wilton Manors named Donn Eisele Park in his memory. Eisele was a guide in the 1986 Concorde Comet Chase flights out of Miami and New York City. In 1987, at the age of 57, Eisele died of a heart attack while on a business trip to Tokyo, Japan, where he was to attend the opening of a new Space Camp patterned on.",
+    "word_count": 149
+  },
+  {
+    "id": 13,
+    "source": "Web Scrape",
+    "text": "Eisele was an Eagle Scout, a member of Tau Beta Pi, and a Freemason, belonging to Luther B. Turner Lodge # 732 in Columbus, Ohio. Among the honors he received during his career were the NASA Exceptional Service Medal, the Air Force Senior Pilot Astronaut Wings, and the Air Force Distinguished Flying Cross. He was a co-recipient of the AIAA 1969 Haley Astronautics Award and was presented the National Academy of Television Arts and Sciences Special Trustees Award in 1969. Eisele was a part of a group of Apollo astronauts to be inducted into the International Space Hall of Fame in 1983. He was one of 24 Apollo astronauts who were inducted into the U.S. Astronaut Hall of Fame in 1997. In 2008, NASA posthumously awarded Eisele the NASA Distinguished Service Medal for his Apollo 7 mission.",
+    "word_count": 137
+  },
+  {
+    "id": 14,
+    "source": "Web Scrape",
+    "text": "A family-approved account of Donn Eisele's life appears in the 2007 book In the Shadow of the Moon. Eisele's posthumously discovered memoir Apollo Pilot was published by University of Nebraska Press in 2017, in the Outward Odyssey series. In the 1998 HBO miniseries From the Earth to the Moon, Eisele was portrayed by John Mese. In the final three episodes of the 2015 ABC television series The Astronaut Wives Club, Eisele was portrayed by Ryan Doom. Susan Eisele Black donated a sample of a Moon rock to Broward County Main Library on behalf of her late husband, on October 23, 2007. Broward County Library, located in Fort Lauderdale, Florida, is the only library in the United States to have a lunar rock on display. The precious Moon rock is typically exhibited at science museums and schools.",
+    "word_count": 136
+  },
+  {
+    "id": 15,
+    "source": "Web Scrape",
+    "text": "Bharatpur I is a community development block that forms an administrative division in the Kandi subdivision of Murshidabad district in the Indian state of West Bengal. Bharatpur is located at 23°52′45″N 88°05′18″E﻿ / ﻿23.879101°N 88.088287°E﻿ / 23.879101; 88.088287 Bharatpur I CD block is bounded by Kandi CD block in the north, Beldanga II CD block in the east, Bharatpur II CD block and Ketugram I CD block, in Bardhaman district, in the south and Burwan CD block in the west. Bharatpur I CD block lies in the Mayurakshi Dwaraka plain in the south-eastern corner of Rarh region in Murshidabad district. The Bhagirathi River splits the district into two natural physiographic regions – Rarh on the west and Bagri on the east. The Rarh region is undulating and contains mostly clay and lateritic clay based soil.",
+    "word_count": 135
+  },
+  {
+    "id": 16,
+    "source": "Web Scrape",
+    "text": "The Rarh region or the western part of the district is drained by the right bank tributaries of the Bhagirathi, flowing down from the hilly / plateau region of Santhal Pargana division in neighbouring Jharkhand. The Farakka Barrage regulates the flow of water into the Bhagirathi through the feeder canal. Thereafter, it is fed with the discharge from the Mayurakshi system. About 1,800 km2 of area in the neighbourhood of Kandi town is flooded by the combined discharge of the Mayurakshi, Dwarka, Brahmani, Gambhira, Kopai and Bakreshwar – the main contributor being the Mayurakshi. Certain other areas in the western sector also get flooded. Bharatpur I CD block has an area of 183.72 km2. It has 1 panchayat samity, 8 gram panchayats, 121 gram sansads (village councils), 92 mouzas and 82 inhabited villages. Bharatpur police station serves this block. Headquarters of this CD block is at Bharatpur.",
+    "word_count": 147
+  },
+  {
+    "id": 17,
+    "source": "Web Scrape",
+    "text": "Gram panchayats in Bharatpur I block/ panchayat samiti are: Alugram, Amlai, Bharatpur, Godda, Gundiria, Jajan, Sijgram and Talgram. Jajan gram panchayet is situated in the north-west of Bharatpur block. This Panchayet has 10 no.of villages named Kujura, Palitpara, Akta, Harishchandrapur, Sardanga, Bindarpur, Jadavpur, Ruha, Jajan, Jadupur . According to the 2011 Census of India, Bharatpur I CD block had a total population of 172,702, all of which were rural. There were 89,088 (52%) males and 83,614 (48%) females. Population in the age range 0–6 years was 22,944. Scheduled Castes numbered 23,865 (13.82%) and Scheduled Tribes numbered 428 (0.25). As of 2001 census, Bharatpur I block has a total population of 150,839, out of which 78,238 were males and 72,601 were females. Bharatpur I block registered a population growth of 16.38 per cent during the 1991-2001 decade. Decadal growth for the district was 23.70%. Decadal growth in West Bengal was 17.84%.",
+    "word_count": 150
+  },
+  {
+    "id": 18,
+    "source": "Web Scrape",
+    "text": "The decadal growth of population in Bharatpur I CD block in 2001-2011 was 14.45%. Large villages in Bharatpur CD block were (2011 census figures in brackets): Jajan (4,318), Harishchandrapur (4,192), Bindarpur (4,052), Talgram (5,564), Bharatpur (15,812), Sijgram (5,464), Saiyad Kulutia (4,629), Binodia (4,473), Sahapur (7,825), Amlai (10,115) and Lohadaha (4,531). As per the 2011 census, the total number of literate persons in Bharatpur I CD block was 94,247 (62.93% of the population over 6 years) out of which males numbered 52,620 (67.94% of the male population over 6 years) and females numbered 41,627 (57.57% of the female population over 6 years). The gender disparity (the difference between female and male literacy rates) was 10.37%. See also – List of West Bengal districts ranked by literacy.",
+    "word_count": 125
+  },
+  {
+    "id": 19,
+    "source": "Web Scrape",
+    "text": "In the 2011 census, Muslims numbered 99,217 and formed 57.45% of the population in Bharatpur I CD block. Hindus numbered 73,214 and formed 42.39% of the population. Others numbered 271 and formed 0.16% of the population. In Bharatpur I and Bharatpur II CD blocks taken together while the proportion of Muslims increased from 51.93% in 1991 to 55.13% in 2001, the proportion of Hindus declined from 48.06% in 1991 to 44.801% in 2001. Murshidabad district had 4,707,573 Muslims who formed 66.27% of the population, 2,359,061 Hindus who formed 33.21% of the population, and 37, 173 persons belonging to other religions who formed 0.52% of the population, in the 2011 census. While the proportion of Muslim population in the district increased from 61.40% in 1991 to 63.67% in 2001, the proportion of Hindu population declined from 38.39% in 1991 to 35.92% in 2001.",
+    "word_count": 142
+  },
+  {
+    "id": 20,
+    "source": "Web Scrape",
+    "text": "Bengali is the predominant language, spoken by 99.94% of the population. As per the Human Development Report 2004 for West Bengal, the rural poverty ratio in Murshidabad district was 46.12%. Purulia, Bankura and Birbhum districts had higher rural poverty ratios. These estimates were based on Central Sample data of NSS 55th round 1999–2000. In Bharatpur I CD block in 2011, amongst the class of total workers, cultivators formed 22.77%, agricultural labourers 46.61%, household industry workers 3.82% and other workers 26.80%. There are 82 inhabited villages in Bharatpur I CD block. 100% villages have power supply. 81 villages (91.78%) had drinking water supply. 23 villages (28.05%) have post offices. 79 villages (96.34%) have telephones (including landlines, public call offices and mobile phones). 37 villages (45.12%) have a pucca approach road and 39 villages (47.56%) have transport communication (includes bus service, rail facility and navigable waterways). 5 villages (6.10%) have agricultural.",
+    "word_count": 149
+  },
+  {
+    "id": 21,
+    "source": "Web Scrape",
+    "text": "From 1977 onwards major land reforms took place in West Bengal. Land in excess of land ceiling was acquired and distributed amongst the peasants. Following land reforms land ownership pattern has undergone transformation. In 2013–14, persons engaged in agriculture in Bharatpur I CD block could be classified as follows: bargadars 3,831 (6.82%,) patta (document) holders 4,642 (8.26%), small farmers (possessing land between 1 and 2 hectares) 3,823(6.80%), marginal farmers (possessing land up to 1 hectare) 16,887 (30.05%) and agricultural labourers 27,020 (48.08%). Bharatpur I CD block had 14 fertiliser depots, 5 seed stores and 43 fair price shops in 2013–14. In 2013–14, Bharatpur I CD block produced 96,620 tonnes of Aman paddy, the main winter crop from 30,229 hectares, 23,571 tonnes of Boro paddy (spring crop) from 6,249 hectares, 966 tonnes of wheat from 354 hectares, 4,613 tonnes of potatoes from 346 hectares and 12,060 tonnes of sugar cane.",
+    "word_count": 149
+  },
+  {
+    "id": 22,
+    "source": "Web Scrape",
+    "text": "In 2013–14, the total area irrigated in Bharatpur I CD block was 5,220 hectares, out of which 2,000 hectares were irrigated by canal water, 1,125 hectares with tank water, 40 hectares by deep tube wells, and 433 hectares by other means. Murshidabad is famous for its silk industry since the Middle Ages. There are three distinct categories in this industry, namely (i) Mulberry cultivation and silkworm rearing (ii) Peeling of raw silk (iii) Weaving of silk fabrics. Ivory carving is an important cottage industry from the era of the Nawabs. The main areas where this industry has flourished are Khagra and Jiaganj. 99% of ivory craft production is exported. In more recent years sandalwood etching has become more popular than ivory carving. Bell metal and Brass utensils are manufactured in large quantities at Khagra, Berhampore, Kandi and Jangipur. Beedi making has flourished in the Jangipur subdivision.",
+    "word_count": 146
+  },
+  {
+    "id": 23,
+    "source": "Web Scrape",
+    "text": "In 2013–14, Bharatpur I CD block had offices of 5 commercial banks and 3 gramin banks. Murshidabad district is listed as a backward region and receives financial support from the Backward Regions Grant Fund. The fund, created by the Government of India, is designed to redress regional imbalances in development. As of 2012, 272 districts across the country were listed under this scheme. The list includes 11 districts of West Bengal. Bharatpur I CD block has 15 ferry services and 3 originating/ terminating bus routes. The nearest railway station is 14 km from the CD block headquarters. The Kandi-Katwa Road passes through this block. In 2013–14, Bharatpur I CD block had 101 primary schools with 9,524 students, 23 middle schools with 3,168 students, 4 high school with 2,708 students and 9 higher secondary schools with 12,120 students. Bharatpur I CD block had 253 institutions special and non-formal education with.",
+    "word_count": 149
+  },
+  {
+    "id": 24,
+    "source": "Web Scrape",
+    "text": "In Bharatpur I CD block, amongst the 82 inhabited villages, 5 villages do not have a school, 30 villages have more than 1 primary school, 35 villages have at least 1 primary and 1 middle school and 15 villages had at least 1 middle and 1 secondary school. In 2014, Bharatpur I CD block had 1 block primary health centre and 2 primary health centres with total 35 beds and 8 doctors (excluding private bodies). It had 24 family welfare subcentres. 7,628 patients were treated indoor and 164,603 patients were treated outdoor in the hospitals, health centres and subcentres of the CD block. Bharatpur I CD block has Bharatpur Rural Hospital at Bharatpur (with 30 beds), Amlai Primary Health Centre (with 4 beds) and Jajan PHC (with 10 beds).",
+    "word_count": 129
+  },
+  {
+    "id": 25,
+    "source": "Web Scrape",
+    "text": "Bharatpur I CD block is one of the areas of Murshidabad district where ground water is affected by a moderate level of arsenic contamination. The WHO guideline for arsenic in drinking water is 10 mg/ litre, and the Indian Standard value is 50 mg/ litre. All but one of the 26 blocks of Murshidabad district have arsenic contamination above the WHO level, all but two of the blocks have arsenic concentration above the Indian Standard value and 17 blocks have arsenic concentration above 300 mg/litre. The maximum concentration in Bharatpur I CD block is 82 mg/litre. Murshidabad travel guide from Wikivoyage Emily Rosaline Orme (1835–1915) was a Scottish suffragist. She was the leader of the Edinburgh National Society for Women's Suffrage.",
+    "word_count": 121
+  },
+  {
+    "id": 26,
+    "source": "Web Scrape",
+    "text": "Orme was born in 1835, one of eight children to parents Eliza Andrews (1816–1892) and Charles Orme (c. 1807–1893), from a wealthy brewing and distilling family. In her early years at Avenue Road in Regent's Park, London she met leading members of the Pre-Raphaelite movement such as Holman Hunt, the Rossettis and Thomas Woolner. The closeness of the family to this movement is shown in an informal sketch of Orme by Dante Gabriel Rossetti, when she was about 18 years old. Orme was also introduced to the academic David Masson (1822–1907), by the librarian at the British Museum, Coventry Patmore. Patmore, who was also a poet and critic, was married to her maternal aunt, the author and Pre-Raphaelite muse Emily Augusta Patmore (née Andrews; 1824–1862). Patmore wrote the poem The Angel in the House which ironically was praising the female sphere as domestic and family and male as public sphere.",
+    "word_count": 150
+  },
+  {
+    "id": 27,
+    "source": "Web Scrape",
+    "text": "Orme married Masson on 27 August 1853, moving initially into her parents' home and sharing friends with political, artistic and literary interests. The philosopher and women's suffrage supporter John Stuart Mill visited them there, and also spoke at Edinburgh later on the topic of women's suffrage. The couple moved to Edinburgh in 1865 when her husband took up the professorial chair of rhetoric and English at the University of Edinburgh, and he strongly supported movement for the university education of women, and was one of the first professors to lecture to women at the Edinburgh Ladies' Education Association, and he also supported medical education for women. They lived first at Rosebury Crescent, then 10 Regent Terrace from 1869 to 1882 before moving to Great King Street, and finally Lockharton Gardens.",
+    "word_count": 130
+  }
+]
