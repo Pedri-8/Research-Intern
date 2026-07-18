@@ -115,8 +115,7 @@ def main():
         weight_decay=0.01,
         save_total_limit=2,
         num_train_epochs=3,              # Train for 3 epochs or adjust as desired
-        predict_with_generate=True,
-        fp16=torch.cuda.is_available(),  # Enable mix-precision speedups on GPU
+        fp16=False,                      # Disable FP16 to prevent T5 underflow/overflow (0.0 Loss / NaN Loss)
         logging_steps=100,
         load_best_model_at_end=True,
         metric_for_best_model="loss",
