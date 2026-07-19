@@ -92,8 +92,6 @@ def main():
         save_total_limit=2,
         num_train_epochs=5,
         logging_steps=50,
-        save_steps=100,
-        eval_steps=None,
         predict_with_generate=True,
         fp16=False,
         load_best_model_at_end=True,
@@ -129,6 +127,30 @@ def main():
     merged_model.save_pretrained(merged_dir)
     tokenizer.save_pretrained(merged_dir)
     print(f"Merged full model saved to: {merged_dir}")
+
+    # === Quick inference sanity check ===
+    print("\n=== Inference test ===")
+    sample_text = (
+        "Wellington had deployed them on the reverse slope of the ridge, "
+        "where they could neither be easily seen nor easily softened up with artillery."
+    )
+    prompt = f"Simplify the following text:\n{sample_text}"
+    inputs = tokenizer(prompt, return_tensors="pt", max_length=max_input_length, truncation=True)
+    inputs = {k: v.to(device) for k, v in inputs.items()}
+
+    merged_model.to(device)
+    with torch.no_grad():
+        outputs = merged_model.generate(
+            **inputs,
+            max_new_tokens=256,
+            num_beams=4,
+            repetition_penalty=1.5,
+            no_repeat_ngram_size=3,
+            early_stopping=True,
+        )
+
+    print(f"Original:   {sample_text}")
+    print(f"Simplified: {tokenizer.decode(outputs[0], skip_special_tokens=True)}")
 
     print("\nTraining and export complete.")
 

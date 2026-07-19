@@ -1,0 +1,258 @@
+import json
+
+notebook = {
+    "cells": [
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "# FLAN-T5-Base LoRA Fine-tuning for Text Simplification\n",
+                "\n",
+                "This notebook fine-tunes `google/flan-t5-base` (248M params) with LoRA on the\n",
+                "`combined_simplified_19830.json` dataset using a 70:30 train/test split.\n",
+                "\n",
+                "**Key fixes applied:**\n",
+                "- `fp16=False` to prevent NaN / 0.0 loss on T5 layer-norm\n",
+                "- No static padding in tokenizer (delegated to `DataCollatorForSeq2Seq` for proper `-100` label masking)\n",
+                "- Beam search + repetition penalty + n-gram blocking in inference to prevent sentence looping\n",
+                "- `save_strategy='epoch'` without conflicting `save_steps`"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "!pip install -q transformers datasets peft accelerate sentencepiece"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "import os\n",
+                "import torch\n",
+                "from google.colab import drive\n",
+                "from datasets import load_dataset\n",
+                "from transformers import (\n",
+                "    AutoTokenizer,\n",
+                "    AutoModelForSeq2SeqLM,\n",
+                "    Seq2SeqTrainingArguments,\n",
+                "    Seq2SeqTrainer,\n",
+                "    DataCollatorForSeq2Seq,\n",
+                ")\n",
+                "from peft import get_peft_model, LoraConfig, TaskType, PeftModel\n",
+                "\n",
+                "drive.mount('/content/drive')\n",
+                "\n",
+                "device = 'cuda' if torch.cuda.is_available() else 'cpu'\n",
+                "print(f'CUDA available: {torch.cuda.is_available()} | Device: {device}')\n",
+                "if torch.cuda.is_available():\n",
+                "    print(f'GPU: {torch.cuda.get_device_name(0)}')"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Load the 19,830-row dataset directly from the GitHub repo\n",
+                "dataset_url = 'https://raw.githubusercontent.com/Pedri-8/Research-Intern/main/output/combined_simplified_19830.json'\n",
+                "print(f'Loading dataset from: {dataset_url}')\n",
+                "\n",
+                "raw_datasets = load_dataset('json', data_files=dataset_url)\n",
+                "\n",
+                "# 70% train, 30% test\n",
+                "split_dataset = raw_datasets['train'].train_test_split(test_size=0.3, seed=42)\n",
+                "print(split_dataset)"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Initialize model and tokenizer\n",
+                "model_name = 'google/flan-t5-base'\n",
+                "tokenizer = AutoTokenizer.from_pretrained(model_name)\n",
+                "model = AutoModelForSeq2SeqLM.from_pretrained(model_name)\n",
+                "model.to(device)\n",
+                "print(f'Model: {model_name} loaded on {device}')"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Tokenize — NO padding here; DataCollatorForSeq2Seq will handle it\n",
+                "# and properly mask pad tokens to -100 in labels\n",
+                "max_input_length = 512\n",
+                "max_target_length = 256\n",
+                "\n",
+                "def preprocess_function(examples):\n",
+                "    inputs = [f'Simplify the following text:\\n{txt}' for txt in examples['text']]\n",
+                "    model_inputs = tokenizer(inputs, max_length=max_input_length, truncation=True)\n",
+                "    labels = tokenizer(text_target=examples['simplified'], max_length=max_target_length, truncation=True)\n",
+                "    model_inputs['labels'] = labels['input_ids']\n",
+                "    return model_inputs\n",
+                "\n",
+                "tokenized_datasets = split_dataset.map(\n",
+                "    preprocess_function,\n",
+                "    batched=True,\n",
+                "    remove_columns=split_dataset['train'].column_names,\n",
+                ")\n",
+                "\n",
+                "print(f'Train examples: {len(tokenized_datasets[\"train\"])}')\n",
+                "print(f'Test examples:  {len(tokenized_datasets[\"test\"])}')"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Configure LoRA adapter\n",
+                "peft_config = LoraConfig(\n",
+                "    task_type=TaskType.SEQ_2_SEQ_LM,\n",
+                "    inference_mode=False,\n",
+                "    r=16,\n",
+                "    lora_alpha=32,\n",
+                "    lora_dropout=0.1,\n",
+                "    target_modules=['q', 'v'],\n",
+                ")\n",
+                "\n",
+                "model = get_peft_model(model, peft_config)\n",
+                "model.print_trainable_parameters()"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Training configuration\n",
+                "training_args = Seq2SeqTrainingArguments(\n",
+                "    output_dir='/content/drive/MyDrive/flan_t5_lora_simplify_base',\n",
+                "    evaluation_strategy='epoch',\n",
+                "    save_strategy='epoch',\n",
+                "    learning_rate=1e-4,\n",
+                "    per_device_train_batch_size=2,\n",
+                "    per_device_eval_batch_size=2,\n",
+                "    gradient_accumulation_steps=4,\n",
+                "    weight_decay=0.01,\n",
+                "    save_total_limit=2,\n",
+                "    num_train_epochs=5,\n",
+                "    logging_steps=50,\n",
+                "    predict_with_generate=True,\n",
+                "    fp16=False,                   # FP32 to prevent T5 NaN/0.0 loss\n",
+                "    load_best_model_at_end=True,\n",
+                "    metric_for_best_model='loss',\n",
+                "    report_to='none',\n",
+                ")\n",
+                "\n",
+                "data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)\n",
+                "\n",
+                "trainer = Seq2SeqTrainer(\n",
+                "    model=model,\n",
+                "    args=training_args,\n",
+                "    train_dataset=tokenized_datasets['train'],\n",
+                "    eval_dataset=tokenized_datasets['test'],\n",
+                "    tokenizer=tokenizer,\n",
+                "    data_collator=data_collator,\n",
+                ")\n",
+                "\n",
+                "print('Starting training...')\n",
+                "trainer.train()"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Save the LoRA adapter to Google Drive\n",
+                "adapter_dir = '/content/drive/MyDrive/flan_t5_lora_adapter_base'\n",
+                "model.save_pretrained(adapter_dir)\n",
+                "tokenizer.save_pretrained(adapter_dir)\n",
+                "print(f'LoRA adapter saved to: {adapter_dir}')"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Merge adapter into base model and save the full standalone model\n",
+                "merged_dir = '/content/drive/MyDrive/flan_t5_lora_merged_base'\n",
+                "\n",
+                "base_model = AutoModelForSeq2SeqLM.from_pretrained(model_name)\n",
+                "peft_model = PeftModel.from_pretrained(base_model, adapter_dir)\n",
+                "merged_model = peft_model.merge_and_unload()\n",
+                "\n",
+                "merged_model.save_pretrained(merged_dir)\n",
+                "tokenizer.save_pretrained(merged_dir)\n",
+                "print(f'Full merged model saved to: {merged_dir}')"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Inference test with repetition-safe generation\n",
+                "sample_text = (\n",
+                "    'Wellington had deployed them on the reverse slope of the ridge, '\n",
+                "    'where they could neither be easily seen nor easily softened up with artillery.'\n",
+                ")\n",
+                "\n",
+                "prompt = f'Simplify the following text:\\n{sample_text}'\n",
+                "inputs = tokenizer(prompt, return_tensors='pt', max_length=512, truncation=True)\n",
+                "inputs = {k: v.to(device) for k, v in inputs.items()}\n",
+                "\n",
+                "merged_model.to(device)\n",
+                "with torch.no_grad():\n",
+                "    outputs = merged_model.generate(\n",
+                "        **inputs,\n",
+                "        max_new_tokens=256,\n",
+                "        num_beams=4,\n",
+                "        repetition_penalty=1.5,\n",
+                "        no_repeat_ngram_size=3,\n",
+                "        early_stopping=True,\n",
+                "    )\n",
+                "\n",
+                "print(f'Original:   {sample_text}')\n",
+                "print(f'Simplified: {tokenizer.decode(outputs[0], skip_special_tokens=True)}')"
+            ]
+        }
+    ],
+    "metadata": {
+        "kernelspec": {
+            "display_name": "Python 3",
+            "language": "python",
+            "name": "python3"
+        },
+        "language_info": {
+            "name": "python"
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 4
+}
+
+output_path = r"c:\JU Intern\flan_t5_base_lora_colab.ipynb"
+with open(output_path, "w", encoding="utf-8") as f:
+    json.dump(notebook, f, indent=1)
+
+print(f"Notebook written to: {output_path}")
