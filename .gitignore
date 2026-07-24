@@ -1,5 +1,10 @@
 venv/
+.venv/
 __pycache__/
 *.pyc
 .gemini/
 .env
+flan_t5_lora_merged_base/
+*.safetensors
+*.bin
+

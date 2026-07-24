@@ -10,7 +10,8 @@ tqdm
 lxml
 
 torch>=2.5
-
 transformers>=5.0
-
 sentencepiece
+peft>=0.5.0
+accelerate>=0.21.0
+safetensors
